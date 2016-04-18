@@ -8,8 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div ng-controller="MultiplicationCtrl" intialNumberLimit="20">
-	<!-- not sure how $attrs works; setting initalNumberLimit to 20 does nothing-->	
+	<div ng-controller="MultiplicationCtrl" inital-number-limit="20">
+	<!-- not sure how $attrs works; angular directive normalization translates hyphens to camelcasing? -->
 	    <input type="number" ng-model="numberLimit" placeholder="Enter a number" />
 	    <table>
 		    <!--tr>
