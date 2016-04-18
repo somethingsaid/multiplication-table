@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Multiplication Table</title>
+	<script type="text/javascript" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div ng-controller="MultiplicationCtrl" intialNumberLimit="20">
+	<!-- not sure how $attrs works; setting initalNumberLimit to 20 does nothing-->	
+	    <input type="number" ng-model="numberLimit" placeholder="Enter a number" />
+	    <table>
+		    <!--tr>
+			    <td>
+				    This is the initial number limit: {{ numberLimit }}
+			    </td>
+		    </tr-->
+            <tr ng-repeat="numberA in numbers()">
+                <td ng-repeat="numberB in numbers()">
+                    {{ compute(numberA, numberB) }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
